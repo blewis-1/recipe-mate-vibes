@@ -1,7 +1,5 @@
 package com.example.recipe_mate.ui.viewmodel
 
-import androidx.compose.runtime.derivedStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.recipe_mate.NetworkResponse
@@ -23,7 +21,7 @@ class RecipeViewModel : ViewModel() {
 
     private val _favoriteRecipes = MutableStateFlow<List<Recipe>>(listOf())
     val favoriteRecipes: StateFlow<List<Recipe>> = _favoriteRecipes
-    val _favCount: StateFlow<Int> = favoriteRecipes.map { it.size }
+    val favCount: StateFlow<Int> = favoriteRecipes.map { it.size }
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.Eagerly,

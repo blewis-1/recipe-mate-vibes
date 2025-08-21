@@ -46,7 +46,7 @@ fun RecipeListScreen(
     onTappedFavorites: () -> Unit,
 ) {
     val recipeState = recipeViewModel.recipes.collectAsState().value
-    val favCount = recipeViewModel._favCount.collectAsState().value
+    val favCount = recipeViewModel.favCount.collectAsState().value
     when (recipeState) {
         is NetworkResponse.Loading -> {
             Loader()
